@@ -20,9 +20,9 @@ Twitter API searching for dogecoin topic and excluding retweets. Our final datas
 
 It's worth to note as well that the value of Dogecoin declined dring this week. 
 
-![doge_value_graph](./images/doge_value_graph.png)
+![doge_value_graph](Images/doge_value_graph.png)
 
-![doge_value_stats](./images/doge_value_stats.png)
+![doge_value_stats](Images/doge_value_stats.png)
 
 ### Methods
 
