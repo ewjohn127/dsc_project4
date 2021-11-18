@@ -1,11 +1,11 @@
 # Dogecoin Sentiment 
 
-Phase Four Group Project / Flatiron Data Science Bootcamp
+*Phase Four Group Project / Flatiron Data Science Bootcamp*
 
 By: 
-- Lenore Perconti 
-- Evan Johnson
-- Andrew Schmeck
+- [Lenore Perconti] 
+- [Evan Johnson]
+- [Andrew Schmeck]
 
 ## Overview
 
@@ -28,12 +28,16 @@ It's worth to note as well that the value of Dogecoin declined dring this week.
 
 We ran tweets through a Sentiment Intensity Analyzer without preprocessing. This provided the sentiment target (Positive, Negative, Neutral).
 
-We then focused on preproccessing to improve the model. We removed punctuation, lowercased all words and removed stopwords. Then we ran a simple model using Sentiment Intensity Analyzer on the processed tweets. 
+We then focused on preproccessing: identifying top occuring words and ngrams, and vectorizing to improve the model. We removed punctuation, lowercased all words and removed stopwords. We use textblob and sentiment intensity analyzer and creates a dataframe with the polarity, subjectivity and sentiment of the tweet.
+
+#### Positive Reinforcement Variable
+We run our n_gram finder function to generate a list of the top 300 frequently occurring words that exist in only positive tweets. The posivie sentiment column is created by checking for the existence of each word in the positive list we just created against each tweet. If a positive word exists in the tweet its positive word counter goes up by one.
+
+For our final model we use multinomial naive bayes and feed in our vectorized data and positive word counts. We use naive bayes to help prevent overfitting. The output of this cell shows the cross validation results, the test predictions and the accuracy score of predicting on test data.
 
 ## Results
 
 The resulting model was a sentiment analysis that predicted positive tweets with 70% precision. 
-
 
 ## Conclusions
 
@@ -45,33 +49,32 @@ In the context of a social media campaign, modeling and predicting positive twee
 
 ### Next Steps
 
-Fo this project we only had access to 100 tweets every hour. Dogecoin gets tweeted about much more than 100 tweets an hour, at one check we observed . An upgraded API would give us 500 tweets every hour.
+For this project we only had access to 100 tweets every hour. Dogecoin gets tweeted about much more than 100 tweets an hour, at one check we observed . An upgraded API would give us 500 tweets every hour.
 
-For this project we only tracked single/double words and tied them to the positive class. For future research we’d like to look at words for the negative/neutral class and also incorporating phrases to better improve the model performance.
+We only tracked single/double words and tied them to the positive class. For future research we’d like to look at words for the negative/neutral class and also incorporating phrases to better improve the model performance.
 
-Finally we’d like to try and apply our sentiment analysis towards predicting the future price of dogecoin. We would look into seeing if there is a correlation between social media sentiment around the coin and how the coin price changes.
+Finally we would find it interesting to try and apply our sentiment analysis towards predicting the future price of dogecoin. We would look into seeing if there is a correlation between social media sentiment around the coin and how the coin price changes.
 
+## For More Information
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+See the full analysis in the [Jupyter notebook] or for a non-technical audience, our [Presentation Slides]. 
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+### Repository Structure
 
+```
+├── code
+│   ├── data_preparation.py
+│   ├── visualizations.py
+├── data
+├── images
+├── __init__.py
+├── README.md
+├── Animal_Shelter_Needs_Presentation.pdf
+└── animal_shelter_needs_analysis.ipynb
+```
 
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
-
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
+   [Andrew Schmeck]: <https://github.com/andrewschmeckt>
+   [Evan Johnson]: <https://github.com/ewjohn127>
+   [Lenore Perconti]: <https://github.com/lperconti>
+   [Jupyter notebook]: <https://github.com/ewjohn127/dsc_project4/blob/main/final_notebook.ipynb>
+   [Presentation Slides]: <https://docs.google.com/presentation/d/1-RdROJjpZxg6GFSgrygvInLrnm52V8BgbN7G1RUI9UQ/edit?usp=sharing>
