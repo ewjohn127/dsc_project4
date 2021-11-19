@@ -9,7 +9,7 @@ By:
 
 ## Overview
 
-This Proect is a sentiment analysis with NLP. It identifies positve vs non-positive (neutral, negative) sentiment of tweets on the topic of dogecoin.
+This Project is a sentiment analysis with NLP. It identifies positve vs non-positive (neutral, negative) sentiment of tweets on the topic of dogecoin.
 
 ### The Stakeholder / Business Problem
 Our hypothetical stakeholder is a Marketing team for a hedgefund. As a Marketing team for a hedgefund, understanding current sentiment around dogecoin will be key to helping clients understand and navigate this market. In this projec, we analyze sentiment around Dogecoin on Twitter. Dogecoin is a cryptocurrency with a $30B market cap. Twitter is an excellent way to get a 'pulse' on public sentiment, and in this presentation we'll show you how this team explored public sentiment via a form of machine learning called sentiment analysis
